@@ -36,56 +36,28 @@ body {
     height: calc(var(--vh, 1vh) * 100 - var(--control-panel-height));
 }
 
-.house {
-    width: 100px;
-    height: 100px;
+.light {
     position: absolute;
+    height: 0;
+    width: 16px;
+    border-bottom: 81px solid #FFE344;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    opacity: .7;
 }
-
-.house_1 {
-    background-color: red;
-    top: 5%;
-    left: 5%;
+.light_blink {
+    animation: light_blink 2s linear infinite;
 }
-
-.house_2 {
-    background-color: green;
-    top: 20%;
-    left: 20%;
+.light_blink_2 {
+    animation: light_blink_2 4s linear infinite;
 }
-
-.house_3 {
-    background-color: yellow;
-    top: 40%;
-    left: 20%;
+.light_1 {
+    top: 565px;
+    left: 852px;
 }
-
-.house_4 {
-    background-color: blue;
-    top: 20%;
-    left: 40%;
-}
-
-.house_5 {
-    background-color: black;
-    top: 40%;
-    left: 40%;
-}
-
-.house_6 {
-    background-color: magenta;
-    top: 0;
-    right: 0;
-}
-.house_7 {
-    background-color: magenta;
-    bottom: 0;
-    right: 0;
-}
-.house_8 {
-    background-color: magenta;
-    bottom: 0;
-    left: 0;
+.light_2 {
+    top: 751px;
+    left: 1097px;
 }
 
 .control-panel {
@@ -98,4 +70,24 @@ body {
 .zoom {
     background-color: #fff;
     font-size: 24px;
+}
+
+@keyframes light_blink {
+    0%, 19%, 22%, 27%, 32%, 74%, 77%, 100% {
+        opacity: .7;
+    }
+
+    20%, 25%, 30%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_2 {
+    0%, 19%, 22%, 27%, 100% {
+        opacity: .7;
+    }
+
+    20%, 25% {
+        opacity: 0;
+    }
 }
