@@ -10,7 +10,7 @@ const startFrom = {
 const map = document.querySelector('.map');
 const container = document.querySelector('.container');
 const zoomButton = document.querySelector('.zoom');
-const coords = document.querySelector('.coords');
+const coordsInput = document.querySelector('.coords');
 
 // Высота панели управления. Нужно здесь задавать для расчета границ передвижения по карте
 const CONTROL_PANEL_HEIGHT = 78;
@@ -24,6 +24,14 @@ window.addEventListener('resize', () => {
     containerParams = container.getBoundingClientRect();
 });
 
+// обновление координат в поле ввода
+const updateCoordsInput = () => {
+    // parseInt(mapState.offset.x) – значение в смещении не целочисленного, а десятичная дробь
+    // нам точное значени не нужно, чтобы получить примерные координаты
+    // поэтому отрезаем все, что после запятой с помощью parseInt
+    coordsInput.value = `${parseInt(mapState.offset.x)};${parseInt(mapState.offset.y)}`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // хак для лечение проблемы в сафари с высотой контейнера
     const vh = window.innerHeight * 0.01;
@@ -33,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     zoomButton.addEventListener('click', zoomMap);
     map.style.transform = `translate(${mapState.offset.x}px, ${mapState.offset.y}px) scale(1)`;
-    coords.value = `${parseInt(mapState.offset.x, 10)};${parseInt(mapState.offset.y, 10)}`;
+    updateCoordsInput();
 
     interact('.draggable')
         // двойной тап на карте зумирует её
@@ -66,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     mapState.offset.x += event.dx;
                     mapState.offset.y += event.dy;
 
-                    coords.value = `${parseInt(mapState.offset.x, 10)};${parseInt(mapState.offset.y, 10)}`;
+                    updateCoordsInput();
 
                     updateMapTransfrom();
                 },
