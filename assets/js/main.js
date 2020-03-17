@@ -1,8 +1,16 @@
+// достаём из урла парметры стартовой позиции
+const urlParams = new URLSearchParams(window.location.search);
+const startParams = (urlParams.get('start') || '').split(';');
+const startFrom = {
+    x: Number(startParams[0]) || 0,
+    y: Number(startParams[1]) || 0
+};
+
 // описываем все элементы на странице
 const map = document.querySelector('.map');
 const container = document.querySelector('.container');
 const zoomButton = document.querySelector('.zoom');
-const test = document.querySelector('.test');
+const coords = document.querySelector('.coords');
 
 // Высота панели управления. Нужно здесь задавать для расчета границ передвижения по карте
 const CONTROL_PANEL_HEIGHT = 78;
@@ -24,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     containerParams = container.getBoundingClientRect();
 
     zoomButton.addEventListener('click', zoomMap);
+    map.style.transform = `translate(${mapState.offset.x}px, ${mapState.offset.y}px) scale(1)`;
+    coords.value = `${parseInt(mapState.offset.x, 10)};${parseInt(mapState.offset.y, 10)}`;
 
     interact('.draggable')
         // двойной тап на карте зумирует её
@@ -56,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     mapState.offset.x += event.dx;
                     mapState.offset.y += event.dy;
 
+                    coords.value = `${parseInt(mapState.offset.x, 10)};${parseInt(mapState.offset.y, 10)}`;
+
                     updateMapTransfrom();
                 },
             }
@@ -68,8 +80,8 @@ const mapState = {
     scale: 1,
     // смещение
     offset: {
-        x: 0,
-        y: 0
+        x: startFrom.x,
+        y: startFrom.y
     }
 }
 
