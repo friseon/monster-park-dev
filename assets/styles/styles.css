@@ -72,6 +72,20 @@ body {
     font-size: 24px;
 }
 
+.big-eye {
+    position: absolute;
+    bottom: 120px;
+    left: 2140px;
+
+    background-image: url(../images/eyes.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 330px;
+    height: 300px;
+}
+
 @keyframes light_blink {
     0%, 19%, 22%, 27%, 32%, 74%, 77%, 100% {
         opacity: .7;

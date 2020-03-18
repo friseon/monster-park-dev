@@ -1,8 +1,16 @@
+// достаём из урла парметры стартовой позиции
+const urlParams = new URLSearchParams(window.location.search);
+const startParams = (urlParams.get('start') || '').split(';');
+const startFrom = {
+    x: Number(startParams[0]) || 0,
+    y: Number(startParams[1]) || 0
+};
+
 // описываем все элементы на странице
 const map = document.querySelector('.map');
 const container = document.querySelector('.container');
 const zoomButton = document.querySelector('.zoom');
-const test = document.querySelector('.test');
+const coordsInput = document.querySelector('.coords');
 
 // Высота панели управления. Нужно здесь задавать для расчета границ передвижения по карте
 const CONTROL_PANEL_HEIGHT = 78;
@@ -16,6 +24,14 @@ window.addEventListener('resize', () => {
     containerParams = container.getBoundingClientRect();
 });
 
+// обновление координат в поле ввода
+const updateCoordsInput = () => {
+    // parseInt(mapState.offset.x) – значение в смещении не целочисленного, а десятичная дробь
+    // нам точное значени не нужно, чтобы получить примерные координаты
+    // поэтому отрезаем все, что после запятой с помощью parseInt
+    coordsInput.value = `${parseInt(mapState.offset.x)};${parseInt(mapState.offset.y)}`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // хак для лечение проблемы в сафари с высотой контейнера
     const vh = window.innerHeight * 0.01;
@@ -24,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     containerParams = container.getBoundingClientRect();
 
     zoomButton.addEventListener('click', zoomMap);
+    map.style.transform = `translate(${mapState.offset.x}px, ${mapState.offset.y}px) scale(1)`;
+    updateCoordsInput();
 
     interact('.draggable')
         // двойной тап на карте зумирует её
@@ -56,6 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     mapState.offset.x += event.dx;
                     mapState.offset.y += event.dy;
 
+                    updateCoordsInput();
+
                     updateMapTransfrom();
                 },
             }
@@ -68,8 +88,8 @@ const mapState = {
     scale: 1,
     // смещение
     offset: {
-        x: 0,
-        y: 0
+        x: startFrom.x,
+        y: startFrom.y
     }
 }
 
