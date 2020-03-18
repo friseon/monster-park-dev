@@ -100,6 +100,20 @@ body {
     height: 200px;
 }
 
+.bubbles {
+    position: absolute;
+    top: 780px;
+    left: 2240px;
+
+    background-image: url(../images/bubbles.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 543px;
+    height: 300px;
+}
+
 .cutter {
     position: absolute;
     overflow: hidden;

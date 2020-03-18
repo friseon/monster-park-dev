@@ -13,3 +13,11 @@ setInterval(() => {
     danceMan.style.backgroundPositionX = `${-250 * danceCounter}px`;
     danceCounter = (danceCounter === 3 ? 0 : (danceCounter + 1));
 }, 300);
+
+const bubbles = document.querySelector('.bubbles');
+let bubblesCounter = 0;
+
+setInterval(() => {
+    bubbles.style.backgroundPositionX = `${-543 * bubblesCounter}px`;
+    bubblesCounter = (bubblesCounter === 2 ? 0 : (bubblesCounter + 1));
+}, 200);
