@@ -89,15 +89,15 @@ body {
 .dance-man {
     position: absolute;
     top: 370px;
-    left: 2340px;
+    left: 2300px;
 
     background-image: url(../images/dance-man.png);
     background-size: cover;
     background-position: 0 0;
     background-repeat: no-repeat;
 
-    width: 250px;
-    height: 200px;
+    width: 325px;
+    height: 260px;
 }
 
 .bubbles {

@@ -10,7 +10,7 @@ const danceMan = document.querySelector('.dance-man');
 let danceCounter = 0;
 
 setInterval(() => {
-    danceMan.style.backgroundPositionX = `${-250 * danceCounter}px`;
+    danceMan.style.backgroundPositionX = `${-325 * danceCounter}px`;
     danceCounter = (danceCounter === 3 ? 0 : (danceCounter + 1));
 }, 300);
 
