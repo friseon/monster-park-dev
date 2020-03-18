@@ -86,6 +86,20 @@ body {
     height: 300px;
 }
 
+.dance-man {
+    position: absolute;
+    top: 370px;
+    left: 2340px;
+
+    background-image: url(../images/dance-man.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 250px;
+    height: 200px;
+}
+
 .cutter {
     position: absolute;
     overflow: hidden;
