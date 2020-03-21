@@ -91,7 +91,7 @@ body {
     position: absolute;
     top: 520px;
     left: 1630px;
-    scale: 1.5;
+    transform: scale(1.5);
 
     background-image: url(../images/hand.png);
     background-size: cover;
@@ -106,7 +106,7 @@ body {
     position: absolute;
     bottom: 120px;
     left: 2140px;
-    scale: 2;
+    transform: scale(2);
 
     background-image: url(../images/eyes.png);
     background-size: cover;
