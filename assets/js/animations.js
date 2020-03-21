@@ -47,3 +47,11 @@ monument.addEventListener('click', (event) => {
     }
     monumentCounter = monumentCounter + diffMonumentCounter;
 });
+
+const flyMonster = document.querySelector('.fly-monster');
+let flyMonsterCounter = 0;
+
+setInterval(() => {
+    flyMonster.style.backgroundPositionX = `${-256 * flyMonsterCounter}px`;
+    flyMonsterCounter = (flyMonsterCounter === 1 ? 0 : (flyMonsterCounter + 1));
+}, 500);

@@ -174,16 +174,19 @@ body {
     left: 2950px;
 }
 
-.big-head {
-    background-image: url(../images/big-head.png);
-    background-size: contain;
+.fly-monster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/flymonster.png);
+    background-size: cover;
     background-position: 0 0;
     background-repeat: no-repeat;
 
-    width: 200px;
-    height: 200px;
+    width: 256px;
+    height: 209px;
 
-    animation: big_head 10s ease-in-out infinite;
+    animation: fly-monster 30s ease-in-out infinite;
 }
 
 @keyframes big_head {
@@ -220,5 +223,22 @@ body {
 
     20%, 25% {
         opacity: 0;
+    }
+}
+
+@keyframes fly-monster {
+    0% {
+        top: 20%;
+        left: -300px;
+    }
+
+    0% {
+        top: 30%;
+        left: 40%;
+    }
+
+    100% {
+        top: 70%;
+        left: calc(100% + 300px);
     }
 }
