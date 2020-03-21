@@ -31,4 +31,19 @@ setInterval(() => {
 }, 300);
 
 const monument = document.querySelector('.monument');
-let monumentCounter = 0;
+let monumentCounter = 1;
+// направление изменения кадров
+let diffMonumentCounter = 1;
+
+monument.addEventListener('click', (event) => {
+    // останавливаем всплытие события клика, чтобы у нас не отрабатывал зум по двойному клику
+    event.preventDefault();
+    event.stopPropagation();
+
+    monument.style.backgroundPositionX = `${-240 * monumentCounter}px`;
+    if (monumentCounter === 4 && diffMonumentCounter > 0 || monumentCounter === 0 && diffMonumentCounter < 0) {
+        // если доходим на крайних кадров, то меняем направление изменения кадров
+        diffMonumentCounter = -diffMonumentCounter;
+    }
+    monumentCounter = monumentCounter + diffMonumentCounter;
+});
