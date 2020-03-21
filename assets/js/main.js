@@ -142,7 +142,15 @@ const toggleScale = () => {
 }
 
 // зумируем карту
-const zoomMap = async () => {
+const zoomMap = (event) => {
+    // если клик по монументу, то не делаем зум
+    if (event.target.closest('.monument')) {
+        return;
+    }
+    // отключаем дефолтные события, чтобы перекрыть зум страницы
+    event.preventDefault();
+    event.stopPropagation();
+
     toggleScale();
     updateStateOffset();
     updateMapTransfrom();
