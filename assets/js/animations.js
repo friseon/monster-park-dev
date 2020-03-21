@@ -21,3 +21,14 @@ setInterval(() => {
     bubbles.style.backgroundPositionX = `${-543 * bubblesCounter}px`;
     bubblesCounter = (bubblesCounter === 2 ? 0 : (bubblesCounter + 1));
 }, 200);
+
+const hand = document.querySelector('.hand');
+let handCounter = 0;
+
+setInterval(() => {
+    hand.style.backgroundPositionX = `${-346 * handCounter}px`;
+    handCounter = (handCounter === 3 ? 0 : (handCounter + 1));
+}, 300);
+
+const monument = document.querySelector('.monument');
+let monumentCounter = 0;

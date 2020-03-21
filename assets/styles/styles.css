@@ -72,10 +72,41 @@ body {
     font-size: 24px;
 }
 
+.monument {
+  position: absolute;
+  top: 925px;
+  left: 1420px;
+
+
+  background-image: url(../images/monument.png);
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  width: 240px;
+  height: 260px;
+}
+
+.hand {
+    position: absolute;
+    top: 520px;
+    left: 1630px;
+    scale: 1.5;
+
+    background-image: url(../images/hand.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 346px;
+    height: 260px;
+}
+
 .big-eye {
     position: absolute;
     bottom: 120px;
     left: 2140px;
+    scale: 2;
 
     background-image: url(../images/eyes.png);
     background-size: cover;
@@ -117,6 +148,24 @@ body {
 .cutter {
     position: absolute;
     overflow: hidden;
+}
+
+.cutter_big-head {
+    position: absolute;
+    top: 910px;
+    left: 2950px;
+}
+
+.big-head {
+    background-image: url(../images/big-head.png);
+    background-size: contain;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 200px;
+    height: 200px;
+
+    animation: big_head 10s ease-in-out infinite;
 }
 
 .cutter_big-head {
