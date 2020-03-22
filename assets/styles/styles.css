@@ -102,6 +102,21 @@ body {
     height: 260px;
 }
 
+.fire {
+    position: absolute;
+    top: 66px;
+    left: 1882px;
+    transform: scale(1.5);
+
+    background-image: url(../images/fire.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 800px;
+    height: 274px;
+}
+
 .big-eye {
     position: absolute;
     bottom: 120px;
