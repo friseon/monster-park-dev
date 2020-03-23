@@ -51,6 +51,34 @@ body {
 .light_blink_2 {
     animation: light_blink_2 4s linear infinite;
 }
+.light_blink_3 {
+    animation: light_blink_3 4s linear infinite;
+}
+.light_blink_4 {
+    animation: light_blink_4 2s linear infinite;
+}
+.light_blink_5 {
+    animation: light_blink_5 2s linear infinite;
+}
+.light_blink_6 {
+    animation: light_blink_6 4s linear infinite;
+}
+.light_blink_7 {
+    animation: light_blink_7 6s linear infinite;
+}
+.light_blink_8 {
+    animation: light_blink_8 5s linear infinite;
+}
+.light_blink_9 {
+    animation: light_blink_9 2s linear infinite;
+}
+.light_blink_10 {
+    animation: light_blink_10 2s linear infinite;
+}
+.light_blink_11 {
+    animation: light_blink_11 2s linear infinite;
+}
+
 .light_1 {
     top: 565px;
     left: 852px;
@@ -59,6 +87,43 @@ body {
     top: 751px;
     left: 1097px;
 }
+.light_3 {
+    top: 1195px;
+    left: 593px;
+}
+.light_4 {
+    top: 416px;
+    left: 2161px;
+}
+.light_5 {
+    top: 832px;
+    left: 2968px;
+}
+.light_6 {
+    top: 2150px;
+    left: 2407px;
+}
+.light_7 {
+    top: 2286px;
+    left: 2066px;
+}
+.light_8 {
+    top: 2301px;
+    left: 1489px;
+}
+.light_9 {
+    top: 2207px;
+    left: 792px;
+}
+.light_10 {
+    top: 2071px;
+    left: 592px;
+}
+.light_11 {
+    top: 1544px;
+    left: 445px;
+}
+
 
 .control-panel {
     display: flex;
@@ -237,6 +302,93 @@ body {
     }
 
     20%, 25% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_3 {
+    0%, 10%, 22%, 30%, 100% {
+        opacity: .7;
+    }
+
+    20%, 25% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_4 {
+    0%, 20%, 27%, 38%, 100% {
+        opacity: .7;
+    }
+
+    20%, 25% {
+        opacity: 0;
+    }
+}
+@keyframes light_blink_5 {
+    0%, 30%, 38%, 40%, 100% {
+        opacity: .7;
+    }
+
+    30%, 36% {
+        opacity: 0;
+    }
+}
+@keyframes light_blink_6 {
+    0%, 20%, 30%, 40%, 100% {
+        opacity: .7;
+    }
+
+    20%,30% {
+        opacity: 0;
+    }
+}
+@keyframes light_blink_7 {
+    0%, 19%, 22%, 27%, 100% {
+        opacity: .7;
+    }
+
+    20%, 25% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_8 {
+    0%, 10%, 22%, 30%, 100% {
+        opacity: .7;
+    }
+
+    40%, 50% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_9 {
+    0%, 30%, 40%, 50%, 100% {
+        opacity: .7;
+    }
+
+    50%, 80% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_10 {
+    0%, 10%, 40%, 80%, 100% {
+        opacity: .7;
+    }
+
+    40%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes light_blink_11 {
+    0%, 10%, 22%, 30%, 100% {
+        opacity: .7;
+    }
+
+    22%, 35% {
         opacity: 0;
     }
 }
