@@ -30,6 +30,14 @@ setInterval(() => {
     handCounter = (handCounter === 3 ? 0 : (handCounter + 1));
 }, 300);
 
+const fire = document.querySelector('.fire');
+let fireCounter = 0;
+
+setInterval(() => {
+    fire.style.backgroundPositionX = `${-800 * fireCounter}px`;
+    fireCounter = (fireCounter === 2 ? 0 : (fireCounter + 1));
+}, 120);
+
 const monument = document.querySelector('.monument');
 let monumentCounter = 1;
 // направление изменения кадров
