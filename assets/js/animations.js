@@ -71,3 +71,30 @@ setInterval(() => {
     Monster.style.backgroundPositionX = `${-238 * MonsterCounter}px`;
     MonsterCounter = (MonsterCounter === 1 ? 0 : (MonsterCounter + 1));
 }, 500);
+
+// модальные окна
+const modalArea = document.querySelectorAll('.modal-area');
+
+const onModalActive = function (item) {
+    const modal = item.querySelector('.modal');
+
+    if (modal) {
+        item.addEventListener('mouseover', () => {
+            modal.classList.add('showed');
+        });
+        item.addEventListener('mouseout', () => {
+            modal.classList.remove('showed');
+        });
+        item.addEventListener('click', () => {
+            const showedModal = document.querySelector('.modal.showed');
+
+            if (showedModal) {
+                // если у нас есть открытое другое окно, то закрываем его
+                showedModal.classList.remove('showed');
+            }
+
+            modal.classList.toggle('showed');
+        });
+    }
+};
+modalArea.forEach(onModalActive);
