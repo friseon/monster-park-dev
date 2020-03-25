@@ -35,7 +35,7 @@ html, body {
 .container {
     width: 100%;
     overflow: hidden;
-    height: calc(100vh - 100px);
+    height: 100vh;
     /* хак для починки багу с размерами на safari */
     height: calc(var(--vh, 1vh) * 100);
 }
