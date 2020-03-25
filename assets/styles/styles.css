@@ -248,10 +248,22 @@ body {
     animation: big_head 10s ease-in-out infinite;
 }
 
-.cutter_big-head {
+.cutter_tongue {
     position: absolute;
-    top: 910px;
-    left: 2950px;
+    top: 1140px;
+    left: 200px;
+}
+
+.tongue {
+    background-image: url(../images/tongue.png);
+    background-size: contain;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 210px;
+    height: 100px;
+
+    animation: tongue 8s ease-in-out infinite;
 }
 
 .fly-monster {
@@ -300,6 +312,17 @@ body {
         transform: translateY(0);
     }
 }
+
+@keyframes tongue {
+    0%, 100%{
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-10%);
+    }
+}
+
 
 @keyframes light_blink {
     0%, 19%, 22%, 27%, 32%, 74%, 77%, 100% {
