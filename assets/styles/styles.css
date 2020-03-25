@@ -1,5 +1,5 @@
 :root {
-    --control-panel-height: 78px;
+    --debug-panel-height: 78px;
 }
 
 @font-face {
@@ -37,7 +37,7 @@ html, body {
     overflow: hidden;
     height: calc(100vh - 100px);
     /* хак для починки багу с размерами на safari */
-    height: calc(var(--vh, 1vh) * 100 - var(--control-panel-height));
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .modal {
@@ -94,11 +94,14 @@ html, body {
     left: 0px;
 }
 
-.control-panel {
-    display: flex;
+.debug-panel {
+    display: none;
     flex-direction: row;
     align-items: center;
-    height: var(--control-panel-height);
+    height: var(--debug-panel-height);
+}
+.debug-panel.show {
+    display: flex;
 }
 
 .zoom {

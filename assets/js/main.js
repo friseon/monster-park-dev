@@ -1,6 +1,7 @@
 // достаём из урла парметры стартовой позиции
 const urlParams = new URLSearchParams(window.location.search);
 const startParams = (urlParams.get('start') || '').split(';');
+const debugMode = (urlParams.get('debug') || false);
 const startFrom = {
     x: Number(startParams[0]) || 0,
     y: Number(startParams[1]) || 0
@@ -11,9 +12,10 @@ const map = document.querySelector('.map');
 const container = document.querySelector('.container');
 const zoomButton = document.querySelector('.zoom');
 const coordsInput = document.querySelector('.coords');
+const debugPanel = document.querySelector('.debug-panel');
 
 // Высота панели управления. Нужно здесь задавать для расчета границ передвижения по карте
-const CONTROL_PANEL_HEIGHT = 78;
+const CONTROL_PANEL_HEIGHT = debugMode ? 78 : 0;
 
 let containerParams = container.getBoundingClientRect();
 
@@ -33,6 +35,9 @@ const updateCoordsInput = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (debugMode) {
+        debugPanel.classList.add('show');
+    }
     // хак для лечение проблемы в сафари с высотой контейнера
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
