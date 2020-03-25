@@ -71,3 +71,19 @@ setInterval(() => {
     Monster.style.backgroundPositionX = `${-238 * MonsterCounter}px`;
     MonsterCounter = (MonsterCounter === 1 ? 0 : (MonsterCounter + 1));
 }, 500);
+
+
+const modalArea = document.querySelectorAll('.modal-area');
+const onhoverhouse = function(item) {
+  const modal = item.querySelector('.modal');
+
+  if (modal) {
+    item.addEventListener('mouseover', (event) => {
+        modal.classList.add('hover');
+    });
+    item.addEventListener('mouseout', (event) => {
+          modal.classList.remove('hover');
+    });
+  }
+};
+modalArea.forEach(onhoverhouse);

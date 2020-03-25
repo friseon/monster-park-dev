@@ -36,6 +36,46 @@ body {
     height: calc(var(--vh, 1vh) * 100 - var(--control-panel-height));
 }
 
+.modal {
+  position: absolute;
+  top: 130px;
+  left: 900px;
+  opacity: 0;
+  background-color: #d3d3d3;
+  transition: opacity 1s ease-out;
+}
+
+.modal__header {
+  background-color: #7751E2;
+  color: #000;
+}
+
+.modal__header h4 {
+  margin: 0;
+  padding: 6px 12px;
+}
+
+.modal__content {
+  padding: 12px;
+  background-color: #BB64FF;
+  color: #000;
+  width: 180px;
+  font-family: 'Cuprum', sans-serif;
+
+}
+
+.modal.hover {
+  opacity: 1;
+}
+
+.modal-area__city {
+  position: absolute;
+  width: 1400px;
+  height: 800px;
+  top: 0px;
+  left: 0px;
+}
+
 .light {
     position: absolute;
     height: 0;
