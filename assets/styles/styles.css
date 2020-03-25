@@ -269,6 +269,21 @@ body {
     animation: fly-monster 30s ease-in-out infinite;
 }
 
+.monstr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/monstr.png);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    width: 256px;
+    height: 209px;
+
+    animation: monstr 30s ease-in-out infinite;
+}
+
 @keyframes big_head {
     0%, 100%{
         transform: translateY(100%);
@@ -407,5 +422,22 @@ body {
     100% {
         top: 70%;
         left: calc(100% + 300px);
+    }
+}
+
+@keyframes monstr {
+    0% {
+        top: 80%;
+        left: calc(100% + 300px);
+    }
+
+    50% {
+        top: 45%;
+        left: 45%;
+    }
+
+    100% {
+        top: 10%;
+        left: calc(0% - 300px);
     }
 }

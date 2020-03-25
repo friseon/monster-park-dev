@@ -63,3 +63,11 @@ setInterval(() => {
     flyMonster.style.backgroundPositionX = `${-256 * flyMonsterCounter}px`;
     flyMonsterCounter = (flyMonsterCounter === 1 ? 0 : (flyMonsterCounter + 1));
 }, 500);
+
+const Monster = document.querySelector('.monstr');
+let MonsterCounter = 0;
+
+setInterval(() => {
+    Monster.style.backgroundPositionX = `${-238 * MonsterCounter}px`;
+    MonsterCounter = (MonsterCounter === 1 ? 0 : (MonsterCounter + 1));
+}, 500);
