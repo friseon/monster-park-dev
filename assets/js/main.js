@@ -91,7 +91,7 @@ const mapState = {
         x: startFrom.x,
         y: startFrom.y
     }
-}
+};
 
 // формула получения смещения
 const getOffset = (coord, zoomDiff, zommDiffCoef) => {
