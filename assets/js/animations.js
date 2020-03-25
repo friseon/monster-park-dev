@@ -79,16 +79,16 @@ const onModalActive = function (item) {
     const modal = item.querySelector('.modal');
 
     if (modal) {
-        item.addEventListener('mouseover', () => {
+        item.addEventListener('mouseenter', () => {
             modal.classList.add('showed');
         });
-        item.addEventListener('mouseout', () => {
+        item.addEventListener('mouseleave', () => {
             modal.classList.remove('showed');
         });
         item.addEventListener('click', () => {
             const showedModal = document.querySelector('.modal.showed');
 
-            if (showedModal) {
+            if (showedModal && modal !== showedModal) {
                 // если у нас есть открытое другое окно, то закрываем его
                 showedModal.classList.remove('showed');
             }
